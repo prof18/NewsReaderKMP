@@ -60,11 +60,18 @@ android {
     }
 }
 
-val VERSION = project.property("LIBRARY_VERSION") as String
 val GROUP: String by project
+val autoVersion = project.property(
+    if (project.hasProperty("AUTO_VERSION")) {
+        "AUTO_VERSION"
+    } else {
+        "LIBRARY_VERSION"
+    }
+) as String
+
 
 group = GROUP
-version = VERSION
+version = autoVersion
 
 addGithubPackagesRepository()
 
