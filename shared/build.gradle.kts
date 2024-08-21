@@ -19,7 +19,7 @@ kotlin {
 
         publishAllLibraryVariants()
     }
-    
+
     listOf(
         iosX64(),
         iosArm64(),
@@ -71,4 +71,11 @@ addGithubPackagesRepository()
 kmmbridge {
     mavenPublishArtifacts()
     spm()
+}
+
+skie {
+    build {
+        // Otherwise it fails with "No 'swiftinterface' files found"
+        enableSwiftLibraryEvolution.set(true)
+    }
 }
