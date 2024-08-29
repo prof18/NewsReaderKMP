@@ -61,18 +61,12 @@ android {
 }
 
 val GROUP: String by project
-val autoVersion = project.property(
-    if (project.hasProperty("AUTO_VERSION")) {
-        "AUTO_VERSION"
-    } else {
-        "LIBRARY_VERSION"
-    }
-) as String
-
+val LIBRARY_VERSION: String by project
 
 group = GROUP
-version = autoVersion
+version = LIBRARY_VERSION
 
+// For publishing Android AAR files to GitHub Packages
 addGithubPackagesRepository()
 
 kmmbridge {
