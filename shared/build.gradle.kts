@@ -70,7 +70,7 @@ version = LIBRARY_VERSION
 addGithubPackagesRepository()
 
 kmmbridge {
-    mavenPublishArtifacts()
+    gitHubReleaseArtifacts()
     spm()
 }
 
